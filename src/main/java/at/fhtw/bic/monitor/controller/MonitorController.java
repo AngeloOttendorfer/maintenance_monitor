@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class MonitorController {
     private String message = "";
-
+        
     @GetMapping("api/message/set")
     @ResponseBody
     public String setMessage(@RequestParam String message){
@@ -18,5 +18,10 @@ public class MonitorController {
             return "ok";
         }
         return "not ok";
+    }
+    
+    @GetMapping("api/message/status")
+    public String retrieveMessage(){
+        return message;
     }
 }
