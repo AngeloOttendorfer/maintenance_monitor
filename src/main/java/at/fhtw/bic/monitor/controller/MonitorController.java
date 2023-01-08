@@ -1,5 +1,15 @@
 package at.fhtw.bic.monitor.controller;
 
-public class MonitorController {
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
+@RestController
+public class MonitorController {
+    private String message = "";
+
+    @GetMapping("/api/message/reset")
+    public String resetMessage(){
+        this.message = "Everything works as expected";
+        return message;
+    }
 }
