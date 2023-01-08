@@ -8,6 +8,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class MonitorController {
     private String message = "";
+    
+    @GetMapping("/api/message/reset")
+    public String resetMessage(){
+        this.message = "Everything works as expected";
+        return message;
+    }
         
     @GetMapping("api/message/set")
     @ResponseBody
