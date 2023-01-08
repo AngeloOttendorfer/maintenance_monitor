@@ -7,9 +7,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class MonitorController {
     private String message = "";
 
-    @GetMapping("/api/message/reset")
-    public String resetMessage(){
-        this.message = "Everything works as expected";
+    @GetMapping("api/message/status")
+    public String retrieveMessage(){
         return message;
     }
 }
